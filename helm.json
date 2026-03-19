@@ -1,0 +1,18 @@
+{
+  "description": "Helm chart grouping and labeling preset for repos using helmv3 (Chart.yaml / requirements.yaml) (opt-in).",
+  "packageRules": [
+    {
+      "description": "Group non-major Helm chart updates into a single PR",
+      "matchManagers": ["helmv3"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Helm charts",
+      "addLabels": ["helm"]
+    },
+    {
+      "description": "Major Helm chart updates as individual PRs to review breaking changes separately",
+      "matchManagers": ["helmv3"],
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["helm"]
+    }
+  ]
+}

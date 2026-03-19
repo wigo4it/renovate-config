@@ -1,0 +1,38 @@
+# See https://pre-commit.com for more information
+repos:
+# General file formatting and checks
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v6.0.0
+  hooks:
+  # Basic file checks
+  - id: trailing-whitespace
+    args: [ --markdown-linebreak-ext=md ]
+  - id: end-of-file-fixer
+  - id: check-yaml
+    args: [ '--allow-multiple-documents' ]
+  - id: check-case-conflict
+  - id: check-merge-conflict
+  - id: check-executables-have-shebangs
+  - id: check-shebang-scripts-are-executable
+
+  # JSON formatting
+  - id: check-json
+  # - id: pretty-format-json
+  #   args: [ '--autofix', '--indent=2' ]
+
+  # Security checks
+  - id: detect-private-key
+
+# Gitleaks for secret scanning
+- repo: https://github.com/gitleaks/gitleaks
+  rev: v8.30.1
+  hooks:
+  - id: gitleaks
+
+# Markdown linting - relaxed rules
+- repo: https://github.com/igorshubovych/markdownlint-cli
+  rev: v0.48.0
+  hooks:
+  - id: markdownlint
+    language: system
+    args: [ '--fix', '--disable', 'MD013', 'MD033', 'MD036', 'MD040' ]

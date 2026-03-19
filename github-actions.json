@@ -1,0 +1,18 @@
+{
+  "description": "GitHub Actions grouping and labeling preset. Digest pinning is already applied in default.json via helpers:pinGitHubActionDigests (opt-in).",
+  "packageRules": [
+    {
+      "description": "Group non-major GitHub Actions updates (including digest bumps) into a single PR",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "groupName": "GitHub Actions",
+      "addLabels": ["github-actions"]
+    },
+    {
+      "description": "Major GitHub Actions updates as individual PRs to review breaking changes separately",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["github-actions"]
+    }
+  ]
+}
