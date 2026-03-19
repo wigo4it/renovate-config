@@ -51,5 +51,6 @@ It's not recommended that you use a private repository to host your config while
 
 ## TODO
 
-Implement or discuss the following:
+The following actions should be completed short-term:
+- Actually make this repository public (check rulesets etc first)
 - Check if rangeStrategy workflows are used in the organisation (specifically for npm packages). If not, add [:pinDevDependencies" to default.json](https://docs.renovatebot.com/upgrade-best-practices/#extends-pindevdependencies). This is a security Best Practice that breaks rangeStrategy for npm.
