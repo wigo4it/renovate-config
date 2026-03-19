@@ -4,7 +4,9 @@
   "extends": [
     "config:recommended",
     "security:minimumReleaseAgeNpm",
-    "helpers:pinGitHubActionDigests"
+    "helpers:pinGitHubActionDigests",
+    "abandonments:recommended",
+    ":configMigration"
     ],
   "commitMessagePrefix": "⬆️",
   "labels": ["dependencies"],
