@@ -1,0 +1,16 @@
+{
+  "description": "Terraform and OpenTofu grouping preset",
+  "terraform": { "enabled": true },
+  "packageRules": [
+    {
+      "matchDatasources": ["terraform-provider"],
+      "groupName": "Terraform providers",
+      "addLabels": ["tf-providers"]
+    },
+    {
+      "matchDatasources": ["terraform-module"],
+      "groupName": "Terraform modules",
+      "addLabels": ["tf-modules"]
+    }
+  ]
+}
