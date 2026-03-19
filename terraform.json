@@ -1,11 +1,16 @@
 {
-  "description": "Terraform and OpenTofu grouping preset",
-  "terraform": { "enabled": true },
+  "description": "Terraform and OpenTofu grouping preset (opt-in).",
   "packageRules": [
     {
       "matchDatasources": ["terraform-provider"],
       "groupName": "Terraform providers",
       "addLabels": ["tf-providers"]
+    },
+    {
+      "description": "Major provider updates as individual PRs to avoid one breaking change blocking all providers",
+      "matchDatasources": ["terraform-provider"],
+      "matchUpdateTypes": ["major"],
+      "groupName": null
     },
     {
       "matchDatasources": ["terraform-module"],

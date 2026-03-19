@@ -1,0 +1,18 @@
+{
+  "description": "Docker image grouping and labeling preset. Extends the digest pinning already applied in default.json (opt-in).",
+  "packageRules": [
+    {
+      "description": "Group non-major Docker image updates (including digest-only bumps) into a single PR",
+      "matchManagers": ["dockerfile", "docker-compose"],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "groupName": "Docker images",
+      "addLabels": ["docker"]
+    },
+    {
+      "description": "Major Docker image updates as individual PRs to review breaking changes separately",
+      "matchManagers": ["dockerfile", "docker-compose"],
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["docker"]
+    }
+  ]
+}

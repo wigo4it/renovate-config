@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Organisation-wide Renovate defaults. Contains only some security best practices",
+  "description": "Organisation-wide Renovate defaults. Contains only some security best practices (opt-out).",
   "extends": [
     "config:recommended",
     "security:minimumReleaseAgeNpm",
@@ -12,5 +12,12 @@
   "labels": ["dependencies"],
   "minimumReleaseAge": "3 days",
   "rangeStrategy": "bump",
-  "platformAutomerge": false
+  "platformAutomerge": false,
+  "packageRules": [
+    {
+      "description": "Pin digests for Dockerfile and Docker Compose.",
+      "matchManagers": ["dockerfile", "docker-compose"],
+      "pinDigests": true
+    }
+  ]
 }
