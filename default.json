@@ -1,17 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Organisation-wide Renovate defaults. Can be overwritten i",
-  "extends": ["config:recommended", "helpers:pinGitHubActionDigests"],
+  "description": "Organisation-wide Renovate defaults. Contains only some security best practices",
+  "extends": [
+    "config:recommended",
+    "security:minimumReleaseAgeNpm",
+    "helpers:pinGitHubActionDigests"
+    ],
   "commitMessagePrefix": "⬆️",
   "labels": ["dependencies"],
   "minimumReleaseAge": "3 days",
   "rangeStrategy": "bump",
-  "platformAutomerge": false,
-  "packageRules": [
-    {
-      "description": "Wait 3 days before npm updates (npm unpublishing window)",
-      "matchDatasources": ["npm"],
-      "minimumReleaseAge": "3 days"
-    }
-  ]
+  "platformAutomerge": false
 }
