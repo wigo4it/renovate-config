@@ -1,8 +1,10 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "Terraform and OpenTofu grouping preset (opt-in).",
   "packageRules": [
     {
       "matchDatasources": ["terraform-provider"],
+      "matchUpdateTypes": ["minor", "patch"],
       "groupName": "Terraform providers",
       "addLabels": ["tf-providers"]
     },
@@ -10,11 +12,20 @@
       "description": "Major provider updates as individual PRs to avoid one breaking change blocking all providers",
       "matchDatasources": ["terraform-provider"],
       "matchUpdateTypes": ["major"],
-      "groupName": null
+      "groupName": null,
+      "addLabels": ["tf-providers"]
     },
     {
       "matchDatasources": ["terraform-module"],
+      "matchUpdateTypes": ["minor", "patch"],
       "groupName": "Terraform modules",
+      "addLabels": ["tf-modules"]
+    },
+    {
+      "description": "Major module updates as individual PRs to review breaking changes separately",
+      "matchDatasources": ["terraform-module"],
+      "matchUpdateTypes": ["major"],
+      "groupName": null,
       "addLabels": ["tf-modules"]
     }
   ]

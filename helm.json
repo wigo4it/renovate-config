@@ -1,4 +1,5 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "Helm chart grouping and labeling preset for repos using helmv3 (Chart.yaml / requirements.yaml) (opt-in).",
   "packageRules": [
     {

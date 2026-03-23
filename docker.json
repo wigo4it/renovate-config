@@ -1,4 +1,5 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "Docker image grouping and labeling preset. Extends the digest pinning already applied in default.json (opt-in).",
   "packageRules": [
     {
