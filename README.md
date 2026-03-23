@@ -10,11 +10,6 @@ We use a three-tiered system for renovate configuration. The goal is to provide 
 - **Shareable Preset Configurations:** The configuration files found in this repository. These include configs for multiple different types of packages, as well as a default config with some general best-practice settings.
 - **Repository-Specific Settings**: Each target repository has its own custom configuration in ```renovate.json```. This is where the shareable preset configurations can be invoked (extended). Apart from extending existing configuration templates, this file can also be used to implement any desired configuration desired for that repository.
 
-## Collaboration
-
-We encourage squads to be mindful of renovate configurations that make sense for them and their specific package types. This means they can contribute to this repository if they want to change, add or delete a configuration.
-
-
 ### Default vs specific configurations
 
 #### Default (Opt-out)
@@ -48,6 +43,11 @@ We will use these renovate presets from both private and public repositories. [R
 ```markdown
 It's not recommended that you use a private repository to host your config while then extending it from a public repository. If your preset doesn't have secrets then you should make it public, while if it does have secrets then it's better to split your preset between a public one which all repos extend, and a private one with secrets which only other private repos extend.
 ```
+
+## Collaboration
+
+We encourage squads to be mindful of renovate configurations that make sense for them and their specific package types. This means they can contribute to this repository if they want to change, add or delete a configuration.
+
 
 ## TODO
 
