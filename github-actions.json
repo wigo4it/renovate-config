@@ -1,4 +1,5 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "GitHub Actions grouping and labeling preset. Digest pinning is already applied in default.json via helpers:pinGitHubActionDigests (opt-in).",
   "packageRules": [
     {
