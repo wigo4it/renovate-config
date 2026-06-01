@@ -47,9 +47,3 @@ It's not recommended that you use a private repository to host your config while
 ## Collaboration
 
 We encourage squads to be mindful of renovate configurations that make sense for them and their specific package types. This means they can contribute to this repository if they want to change, add or delete a configuration.
-
-
-## TODO
-
-The following actions should be completed short-term:
-- Actually make this repository public (check rulesets etc first)

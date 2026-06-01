@@ -3,6 +3,12 @@
   "description": "Docker image grouping and labeling preset. Extends the digest pinning already applied in default.json (opt-in).",
   "packageRules": [
     {
+      "description": "Disable minimumReleaseAge for GHCR images. This registry doesn't reliably expose timestamps, causing renovate to skip PR creation.",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["ghcr.io/**"],
+      "minimumReleaseAge": "0 days"
+    },
+    {
       "description": "Group non-major Docker image updates (including digest-only bumps) into a single PR",
       "matchManagers": ["dockerfile", "docker-compose"],
       "matchUpdateTypes": ["minor", "patch", "digest"],
