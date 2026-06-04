@@ -3,9 +3,9 @@
   "description": "Docker image grouping and labeling preset. Extends the digest pinning already applied in default.json (opt-in).",
   "packageRules": [
     {
-      "description": "Disable minimumReleaseAge for GHCR images. This registry doesn't reliably expose timestamps, causing renovate to skip PR creation.",
+      "description": "Disable minimumReleaseAge for GHCR and Quay images. These registries don't expose timestamps, causing Renovate to silently block updates. https://docs.renovatebot.com/key-concepts/minimum-release-age/#which-registries-support-release-timestamps",
       "matchDatasources": ["docker"],
-      "matchPackageNames": ["ghcr.io/**"],
+      "matchPackageNames": ["ghcr.io/**", "quay.io/**"],
       "minimumReleaseAge": "0 days"
     },
     {
