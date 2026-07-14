@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Basic Docker registry, image and labeling presets. Extends the digest pinning already applied in default.json (opt-in).",
+  "description": "Further Docker registry, image and labeling presets. This groups some images into single PRs, so only add this to your config if you want this.",
   "registryAliases": {
     "acr015prodwe.azurecr.io/docker.io": "docker.io",
     "acr015prodwe.azurecr.io/ghcr.io": "ghcr.io",
@@ -14,6 +14,13 @@
       "matchDatasources": ["docker"],
       "matchPackageNames": ["ghcr.io/**", "quay.io/**"],
       "minimumReleaseAge": "0 days"
+    },
+    {
+      "description": "Group non-major Docker image updates (including digest-only bumps) into a single PR",
+      "matchManagers": ["dockerfile", "docker-compose"],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "groupName": "Docker images",
+      "addLabels": ["docker"]
     },
     {
       "description": "Major Docker image updates as individual PRs to review breaking changes separately",
