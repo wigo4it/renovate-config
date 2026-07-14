@@ -28,6 +28,7 @@ To use these configurations in a repository, you need to extend them in ```renov
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>wigo4it/renovate-config",
+    "github>wigo4it/renovate-config:docker",
     "github>wigo4it/renovate-config:terraform",
     "github>wigo4it/renovate-config:helm"
   ]
