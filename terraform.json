@@ -3,6 +3,7 @@
   "description": "Terraform and OpenTofu grouping preset (opt-in).",
   "packageRules": [
     {
+      "description": "Group non-major Terraform provider updates into a single PR",
       "matchDatasources": ["terraform-provider"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "Terraform providers",
@@ -16,6 +17,7 @@
       "addLabels": ["tf-providers"]
     },
     {
+      "description": "Group non-major Terraform module updates into a single PR",
       "matchDatasources": ["terraform-module"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "Terraform modules",

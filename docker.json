@@ -1,19 +1,18 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "Basic Docker registry, image and labeling presets. Extends the digest pinning already applied in default.json (opt-in).",
-  "registryAliases": {
-    "acr015prodwe.azurecr.io/docker.io": "docker.io",
-    "acr015prodwe.azurecr.io/ghcr.io": "ghcr.io",
-    "acr015prodwe.azurecr.io/quay.io": "quay.io",
-    "acr015prodwe.azurecr.io/registry.k8s.io": "registry.k8s.io",
-    "acr015prodwe.azurecr.io/mcr.microsoft.com": "mcr.microsoft.com"
-  },
   "packageRules": [
     {
-      "description": "Disable minimumReleaseAge for GHCR and Quay images. These registries don't expose timestamps, causing Renovate to silently block updates. https://docs.renovatebot.com/key-concepts/minimum-release-age/#which-registries-support-release-timestamps",
+      "description": "These registries don't expose timestamps. Since Renovate 42, missing timestamps are treated as not yet past minimumReleaseAge, causing updates to be permanently pending (no PR, visible in Dependency Dashboard). https://docs.renovatebot.com/key-concepts/minimum-release-age/#which-registries-support-release-timestamps",
       "matchDatasources": ["docker"],
-      "matchPackageNames": ["ghcr.io/**", "quay.io/**"],
+      "matchPackageNames": ["ghcr.io/**", "quay.io/**", "registry.k8s.io/**", "mcr.microsoft.com/**", "gcr.io/**"],
       "minimumReleaseAge": "0 days"
+    },
+    {
+      "description": "Label non-major Docker image updates without grouping (use docker-extended for grouping)",
+      "matchManagers": ["dockerfile", "docker-compose"],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "addLabels": ["docker"]
     },
     {
       "description": "Major Docker image updates as individual PRs to review breaking changes separately",

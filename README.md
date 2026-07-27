@@ -30,7 +30,8 @@ To use these configurations in a repository, you need to extend them in ```renov
     "github>wigo4it/renovate-config",
     "github>wigo4it/renovate-config:docker",
     "github>wigo4it/renovate-config:terraform",
-    "github>wigo4it/renovate-config:helm"
+    "github>wigo4it/renovate-config:helm",
+    "github>wigo4it/renovate-config:kustomize"
   ]
 }
 ```

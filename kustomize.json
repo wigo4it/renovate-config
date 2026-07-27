@@ -1,0 +1,19 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Kustomize grouping and labeling preset for repos using kustomization.yaml files (opt-in). Covers remote bases (git-tags), image tags (docker), and embedded Helm charts.",
+  "packageRules": [
+    {
+      "description": "Group non-major Kustomize updates (remote bases, images, Helm charts) into a single PR",
+      "matchManagers": ["kustomize"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Kustomize dependencies",
+      "addLabels": ["kustomize"]
+    },
+    {
+      "description": "Major Kustomize updates as individual PRs to review breaking changes separately",
+      "matchManagers": ["kustomize"],
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["kustomize"]
+    }
+  ]
+}

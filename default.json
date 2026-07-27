@@ -9,5 +9,6 @@
   "labels": ["dependencies"],
   "minimumReleaseAge": "3 days",
   "osvVulnerabilityAlerts": true,
-  "platformAutomerge": false
+  "platformAutomerge": false,
+  "prConcurrentLimit": 10
 }
