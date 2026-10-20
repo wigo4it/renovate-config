@@ -1,0 +1,118 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": ".NET (NuGet) grouping preset (opt-in). Groups non-major updates per main package prefix. Packages without their own group, and all major updates, get an individual PR.",
+  "packageRules": [
+    {
+      "description": "Microsoft.* packages",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["Microsoft.{/,}**"],
+      "groupName": "Microsoft"
+    },
+    {
+      "description": "System.* packages",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["System.{/,}**"],
+      "groupName": "System"
+    },
+    {
+      "description": "Aspire.* packages",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["Aspire.{/,}**", "aspirerunner.{/,}**"],
+      "groupName": "Aspire"
+    },
+    {
+      "description": "Wigo4it",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["Wigo4it.{/,}**"],
+      "groupName": "Wigo4it"
+    },
+    {
+      "description": "NServiceBus.* packages",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["NServiceBus{/,}**"],
+      "groupName": "NServiceBus"
+    },
+    {
+      "description": "MassTransit",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["MassTransit{/,}**"],
+      "groupName": "MassTransit"
+    },
+    {
+      "description": "Serilog",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["Serilog{/,}**"],
+      "groupName": "Serilog"
+    },
+    {
+      "description": "NLog",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["NLog{/,}**"],
+      "groupName": "NLog"
+    },
+    {
+      "description": "OpenTelemetry",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["OpenTelemetry{/,}**"],
+      "groupName": "OpenTelemetry"
+    },
+    {
+      "description": "xunit",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["xunit{/,}**"],
+      "groupName": "xunit"
+    },
+    {
+      "description": "NUnit",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["NUnit{/,}**", "NUnit3TestAdapter"],
+      "groupName": "NUnit"
+    },
+    {
+      "description": "Reqnroll",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["Reqnroll{/,}**"],
+      "groupName": "Reqnroll"
+    },
+    {
+      "description": "coverlet",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["coverlet{/,}**"],
+      "groupName": "coverlet"
+    },
+    {
+      "description": "bUnit",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["bunit{/,}**"],
+      "groupName": "bUnit"
+    },
+    {
+      "description": "Refit.* packages",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["Refit{/,}**"],
+      "groupName": "Refit"
+    },
+    {
+      "description": "Major updates as individual PRs to review breaking changes separately",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["major"],
+      "groupName": null,
+      "addLabels": ["nuget"]
+    }
+  ]
+}
