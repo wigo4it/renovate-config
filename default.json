@@ -9,5 +9,13 @@
   "labels": ["dependencies"],
   "minimumReleaseAge": "3 days",
   "osvVulnerabilityAlerts": true,
-  "platformAutomerge": false
+  "platformAutomerge": false,
+  "packageRules": [
+    {
+      "description": "NuGet lock file maintenance ondersteunt geen minimumReleaseAge-validatie (security:stabilityDays dekt alleen npm).",
+      "matchDatasources": ["nuget"],
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "minimumReleaseAge": null
+    }
+  ]
 }
